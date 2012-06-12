@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+
+<!-- Put site-specific property overrides in this file. -->
+
+<configuration>
+ <property>
+        <name>fs.default.name</name>
+        <value>hdfs://eq2-hadoopnn-01.prod.mypna.com:8020</value>
+        <description>The name of the default file system. 
+            Points to the name node location</description>
+    </property>
+</configuration>

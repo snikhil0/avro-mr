@@ -1,0 +1,11 @@
+{
+      "namespace": "com.telenav.logshed.collector.sink",
+      "name": "collectorStore",
+      "type": "record",
+      "fields": [
+          {"name": "timestamp", "type": "long"},
+          {"name": "appid", "type": "string", "default":null},
+          {"name": "id", "type": "long"},
+          {"name": "payloadType", "type": "string", "default":"BINARY"},
+          {"name": "payload", "type": "bytes"} ]
+}

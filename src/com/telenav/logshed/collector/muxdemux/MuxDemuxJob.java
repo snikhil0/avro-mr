@@ -1,7 +1,14 @@
 package com.telenav.logshed.collector.muxdemux;
 
 import org.apache.avro.Schema;
+import org.apache.avro.mapred.AvroInputFormat;
 import org.apache.avro.mapred.AvroJob;
+import org.apache.avro.mapred.AvroKey;
+import org.apache.avro.mapred.AvroKeyComparator;
+import org.apache.avro.mapred.AvroOutputFormat;
+import org.apache.avro.mapred.AvroSerialization;
+import org.apache.avro.mapred.AvroTextOutputFormat;
+import org.apache.avro.mapred.AvroWrapper;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.JobConf;
@@ -22,18 +29,19 @@ public class MuxDemuxJob extends Configured implements Tool
 	public int run(String[] args) throws Exception
 	{
 		JobConf jobConf = new JobConf(LogshedCollectorUtils.getLocalHadoopConfiguartion());
-		Job job = new Job(jobConf, "muxdemux_job");
-		FileInputFormat.setInputPaths(job, new Path(args[0]));
-
-		Path outPath = new Path(args[1]);
-		FileOutputFormat.setOutputPath(job, outPath);
-		job.setJarByClass(MuxDemuxJob.class);
-
+	
 		AvroJob.setInputSchema(jobConf, IN_SCHEMA);
 		AvroJob.setOutputSchema(jobConf, OUT_SCHEMA);
 
 		AvroJob.setMapperClass(jobConf, LogshedMapper.class);
 		AvroJob.setReducerClass(jobConf, LogshedReducer.class);
+		
+		Job job = new Job(jobConf, "muxdemux_job");
+		FileInputFormat.setInputPaths(job, new Path(args[0]));
+		Path outPath = new Path(args[1]);
+		FileOutputFormat.setOutputPath(job, outPath);
+		job.setJarByClass(MuxDemuxJob.class);
+	
 
 		return job.waitForCompletion(true) ? 0 : 1;
 

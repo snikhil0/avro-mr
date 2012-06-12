@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite errors="1" failures="0" hostname="snikhil-mbp13.telenav.com" name="com.telenavlogshed.collector.muxdemux.AllTests" tests="1" time="0.0" timestamp="2012-06-11T22:28:19">
+  <properties>
+    <property name="java.vendor" value="Apple Inc." />
+    <property name="lib.dir" value="/Users/snikhil/main/source/architecture/avro-mr/lib" />
+    <property name="sun.java.launcher" value="SUN_STANDARD" />
+    <property name="eclipse.pdebuild.templates" value="/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.eclipse.pde.build_3.7.0.v20111116-2009/templates//" />
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
+    <property name="test.data.dir" value="/Users/snikhil/main/source/architecture/avro-mr/target/data" />
+    <property name="os.name" value="Mac OS X" />
+    <property name="sun.boot.class.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsfd.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/classes.jar:/System/Library/Frameworks/JavaVM.framework/Frameworks/JavaRuntimeSupport.framework/Resources/Java/JavaRuntimeSupport.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/ui.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/laf.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/sunrsasign.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jsse.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/jce.jar:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Classes/charsets.jar" />
+    <property name="java.vm.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="ant.home" value="/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030" />
+    <property name="java.runtime.version" value="1.6.0_31-b04-415-10M3635" />
+    <property name="test.dir.classes" value="/Users/snikhil/main/source/architecture/avro-mr/build/classes" />
+    <property name="user.name" value="snikhil" />
+    <property name="awt.nativeDoubleBuffering" value="true" />
+    <property name="user.language" value="en" />
+    <property name="sun.boot.library.path" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Libraries" />
+    <property name="ant.project.default-target" value="junit" />
+    <property name="test.htmlreports.dir" value="/Users/snikhil/main/source/architecture/avro-mr/target/htmlreports" />
+    <property name="ant.project.name" value="avromr" />
+    <property name="java.version" value="1.6.0_31" />
+    <property name="user.timezone" value="" />
+    <property name="sun.arch.data.model" value="64" />
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="java.endorsed.dirs" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/endorsed" />
+    <property name="sun.cpu.isalist" value="" />
+    <property name="sun.jnu.encoding" value="MacRoman" />
+    <property name="file.encoding.pkg" value="sun.io" />
+    <property name="file.separator" value="/" />
+    <property name="java.specification.name" value="Java Platform API Specification" />
+    <property name="java.class.version" value="50.0" />
+    <property name="user.country" value="US" />
+    <property name="java.home" value="/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home" />
+    <property name="java.vm.info" value="mixed mode" />
+    <property name="ant.file" value="/Users/snikhil/main/source/architecture/avro-mr/build.xml" />
+    <property name="os.version" value="10.6.8" />
+    <property name="path.separator" value=":" />
+    <property name="java.vm.version" value="20.6-b01-415" />
+    <property name="ant.library.dir" value="/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib" />
+    <property name="java.awt.printerjob" value="apple.awt.CPrinterJob" />
+    <property name="ant.file.avromr" value="/Users/snikhil/main/source/architecture/avro-mr/build.xml" />
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle" />
+    <property name="awt.toolkit" value="apple.awt.CToolkit" />
+    <property name="junit.class.name" value="com.telenavlogshed.collector.muxdemux.AllTests" />
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16" />
+    <property name="eclipse.pdebuild.scripts" value="/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.eclipse.pde.build_3.7.0.v20111116-2009/scripts//" />
+    <property name="user.home" value="/Users/snikhil" />
+    <property name="java.specification.vendor" value="Sun Microsystems Inc." />
+    <property name="test.dir" value="/Users/snikhil/main/source/architecture/avro-mr/test" />
+    <property name="java.library.path" value=".:/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:/Users/snikhil/springsource/sts-2.9.2.RELEASE/configuration/org.eclipse.osgi/bundles/715/1/.cp" />
+    <property name="java.vendor.url" value="http://www.apple.com/" />
+    <property name="java.vm.vendor" value="Apple Inc." />
+    <property name="gopherProxySet" value="false" />
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
+    <property name="sun.java.command" value="org.eclipse.ant.internal.launching.remote.InternalAntRunner -Dorg.eclipse.ant.core.ANT_PROCESS_ID=1339453695333 -Declipse.connect.request_port=59564 -Declipse.connect.port=59563 -Declipse.pdebuild.home=/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.eclipse.pde.build_3.7.0.v20111116-2009/.// -Declipse.pdebuild.scripts=/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.eclipse.pde.build_3.7.0.v20111116-2009/scripts// -Declipse.pdebuild.templates=/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.eclipse.pde.build_3.7.0.v20111116-2009/templates// -Dant.home=/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030 -logger org.eclipse.ant.internal.launching.remote.logger.RemoteAntDebugBuildLogger -inputhandler org.eclipse.ant.internal.ui.antsupport.inputhandler.ProxyInputHandler -buildfile /Users/snikhil/main/source/architecture/avro-mr/build.xml" />
+    <property name="java.class.path" value="/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-antlr.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-apache-bcel.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-apache-bsf.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-apache-log4j.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-apache-oro.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-apache-regexp.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-apache-resolver.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-apache-xalan2.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-commons-logging.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-commons-net.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-jai.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-javamail.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-jdepend.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-jmf.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-jsch.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-junit.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-junit4.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-launcher.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-netrexx.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-swing.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant-testutil.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/configuration/org.eclipse.osgi/bundles/138/1/.cp/lib/antdebug.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/configuration/org.eclipse.osgi/bundles/138/1/.cp/lib/remote.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/configuration/org.eclipse.osgi/bundles/139/1/.cp/lib/remoteAnt.jar:/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.eclipse.swt.cocoa.macosx.x86_64_3.7.2.v3740f.jar" />
+    <property name="ant.version" value="Apache Ant(TM) version 1.8.2 compiled on December 20 2010" />
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
+    <property name="java.vm.specification.version" value="1.0" />
+    <property name="sun.cpu.endian" value="little" />
+    <property name="src.dir.classes" value="/Users/snikhil/main/source/architecture/avro-mr/build/classes" />
+    <property name="sun.os.patch.level" value="unknown" />
+    <property name="eclipse.pdebuild.home" value="/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.eclipse.pde.build_3.7.0.v20111116-2009/.//" />
+    <property name="java.io.tmpdir" value="/var/folders/zp/zprAiSWIHJSq2Btxf5LM35xRn9Y/-Tmp-/" />
+    <property name="java.vendor.url.bug" value="http://bugreport.apple.com/" />
+    <property name="mrj.build" value="10M3635" />
+    <property name="os.arch" value="x86_64" />
+    <property name="java.awt.graphicsenv" value="apple.awt.CGraphicsEnvironment" />
+    <property name="java.ext.dirs" value="/Library/Java/Extensions:/System/Library/Java/Extensions:/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext" />
+    <property name="mrj.version" value="1060.1.6.0_31-415" />
+    <property name="user.dir" value="/Users/snikhil/main/source/architecture/avro-mr" />
+    <property name="ant.file.type.avromr" value="file" />
+    <property name="line.separator" value="&#xa;" />
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM" />
+    <property name="basedir" value="/Users/snikhil/main/source/architecture/avro-mr" />
+    <property name="ant.java.version" value="1.6" />
+    <property name="ant.core.lib" value="/Users/snikhil/springsource/sts-2.9.2.RELEASE/plugins/org.apache.ant_1.8.2.v20120109-1030/lib/ant.jar" />
+    <property name="file.encoding" value="MacRoman" />
+    <property name="java.specification.version" value="1.6" />
+    <property name="src.dir" value="/Users/snikhil/main/source/architecture/avro-mr/src" />
+    <property name="ant.project.invoked-targets" value="junit" />
+  </properties>
+  <error message="com.telenavlogshed.collector.muxdemux.AllTests" type="java.lang.ClassNotFoundException">java.lang.ClassNotFoundException: com.telenavlogshed.collector.muxdemux.AllTests
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:247)
+	at java.lang.Class.forName0(Native Method)
+	at java.lang.Class.forName(Class.java:247)
+	at org.eclipse.ant.internal.launching.remote.EclipseDefaultExecutor.executeTargets(EclipseDefaultExecutor.java:32)
+	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.run(InternalAntRunner.java:424)
+	at org.eclipse.ant.internal.launching.remote.InternalAntRunner.main(InternalAntRunner.java:138)
+</error>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

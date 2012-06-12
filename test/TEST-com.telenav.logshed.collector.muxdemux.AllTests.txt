@@ -1,0 +1,1 @@
+Testsuite: com.telenav.logshed.collector.muxdemux.AllTests
