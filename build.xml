@@ -1,0 +1,161 @@
+<project name="avromr" default="compile" basedir=".">
+
+	<property name="artifact.name" value="avromr" />
+	<property name="artifact.version" value="0.1-dev" />
+	<property name="basedir" value="." />
+	<property name="lib.dir" value="${basedir}/lib" />
+	<property name="src.home" value="${basedir}/src" />
+	<property name="src.main" value="${src.home}" />
+	<property name="src.test" value="${basedir}/test" />
+	<property name="build.home" value="${basedir}/build" />
+	<property name="build.instrumented" value="${build.home}/instrumented_classes" />
+	<property name="build.main" value="${build.home}/main" />
+	<property name="build.test" value="${build.home}/test" />
+	<property name="dist.home" value="${basedir}/dist" />
+	<property name="dist.test.report" value="${dist.home}/test_report" />
+	<property name="dist.coverage.report" value="${dist.home}/coverage_report" />
+	<property name="docs.home" value="${dist.home}/docs" />
+	<property name="test.home" value="${basedir}/test" />
+	<property name="config.home" value="${basedir}/config" />
+	<property name="resources.home" value="${basedir}/resources" />
+
+	<!-- =================================================================== -->
+	<!-- Construct the classpaths.                                      	 -->
+	<!-- =================================================================== -->
+	<path id="main.classpath">
+		<fileset dir="${basedir}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${build.main}" />
+	</path>
+	<path id="test.classpath">
+		<fileset dir="${basedir}/lib">
+			<include name="*.jar" />
+		</fileset>
+		<pathelement path="${build.main}" />
+		<pathelement path="${build.test}" />
+	</path>
+	<path id="cobertura.classpath">
+		<fileset dir="${cobertura.home}">
+			<include name="cobertura.jar" />
+			<include name="lib/**/*.jar" />
+		</fileset>
+	</path>
+	<path id="instrumeted.classpath">
+		<pathelement path="${build.instrumented}" />
+	</path>
+
+	<!-- =================================================================== -->
+	<!-- Delete all previously generated artifacts.                        	 -->
+	<!-- =================================================================== -->
+	<target name="clean" description="Delete old build and dist directories">
+		<delete dir="${build.home}" />
+		<delete dir="${dist.home}" />
+		<delete dir="${test.home}" />
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Prepares the directories                                       	 -->
+	<!-- =================================================================== -->
+	<target name="prepare">
+		<mkdir dir="${build.home}" />
+		<mkdir dir="${build.main}" />
+		<mkdir dir="${build.test}" />
+		<mkdir dir="${dist.home}" />
+		<mkdir dir="${docs.home}" />
+		<mkdir dir="${test.home}" />
+		<mkdir dir="${build.main}/config" />
+		<mkdir dir="${build.main}/resources" />
+		<mkdir dir="${build.test}/config" />
+		<mkdir dir="${build.test}/resources" />
+	</target>
+
+
+
+	<!-- =================================================================== -->
+	<!-- Compile main and test Java code.                                	 -->
+	<!-- =================================================================== -->
+	<target name="compile" depends="prepare" description="Compile main and test Java sources">
+		<!-- Compile the main Java code -->
+		<javac srcdir="${src.main}" destdir="${build.main}" debug="true" deprecation="false" optimize="true" includeantruntime="false">
+			<classpath refid="main.classpath" />
+		</javac>
+
+		<!-- Copy main resources -->
+		<copy todir="${build.main}">
+			<fileset dir="${src.main}" excludes="**/*.java" />
+			<fileset dir="${config.home}" />
+			<fileset dir="${resources.home}" />
+		</copy>
+
+		<copy todir="${build.main}/config">
+			<fileset dir="${config.home}" includes="*" />
+		</copy>
+
+		<copy todir="${build.main}/resources">
+			<fileset dir="${resources.home}" />
+		</copy>
+
+		<!-- Compile the test Java code -->
+		<javac srcdir="${src.test}" destdir="${build.test}" debug="true" deprecation="false" optimize="true" includeantruntime="false">
+			<classpath refid="main.classpath" />
+		</javac>
+
+		<!-- Copy test resources -->
+		<copy todir="${build.test}">
+			<fileset dir="${src.test}" excludes="**/*.java" />
+			<fileset dir="${config.home}" includes="*" />
+			<fileset dir="${resources.home}" includes="*" />
+		</copy>
+
+		<copy todir="${build.test}/config">
+			<fileset dir="${config.home}" includes="*" />
+		</copy>
+
+		<copy todir="${build.test}/resources">
+			<fileset dir="${resources.home}" includes="*" />
+		</copy>
+
+
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Create the Javadocs                                            	 -->
+	<!-- =================================================================== -->
+	<target name="javadoc" depends="compile" description="Create Javadoc API documentation">
+		<javadoc sourcepath="${src.main}" destdir="${docs.home}" packagenames="*">
+			<classpath refid="main.classpath" />
+		</javadoc>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Run the JUnit tests.                                            	 -->
+	<!-- =================================================================== -->
+	<target name="test" depends="compile" description="Run the junit unit tests">
+		<junit printsummary="yes" haltonfailure="yes">
+			<formatter type="plain" />
+			<classpath refid="test.classpath" />
+			<batchtest fork="yes" todir="${test.home}">
+				<fileset dir="${src.test}">
+					<include name="**/*Test*.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<!-- =================================================================== -->
+	<!-- Create the distribution artifacts.                                	 -->
+	<!-- =================================================================== -->
+	<target name="jar-application" depends="compile" description="Generate compiled jar">
+		<jar jarfile="${dist.home}/${artifact.name}-${artifact.version}.jar" basedir="${build.main}" />
+	</target>
+
+	<target name="jar-sources" description="Generate source file jar">
+		<jar jarfile="${dist.home}/${artifact.name}-${artifact.version}-source.jar" basedir="${src.main}" />
+	</target>
+
+	<target name="all" depends="jar-application,jar-sources,test,javadoc" description="Create binary distribution">
+
+	</target>
+
+</project>
