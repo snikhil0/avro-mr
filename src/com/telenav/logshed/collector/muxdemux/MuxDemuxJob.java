@@ -29,19 +29,18 @@ public class MuxDemuxJob extends Configured implements Tool
 	public int run(String[] args) throws Exception
 	{
 		JobConf jobConf = new JobConf(LogshedCollectorUtils.getLocalHadoopConfiguartion());
-	
-		AvroJob.setInputSchema(jobConf, IN_SCHEMA);
-		AvroJob.setOutputSchema(jobConf, OUT_SCHEMA);
-
-		AvroJob.setMapperClass(jobConf, LogshedMapper.class);
-		AvroJob.setReducerClass(jobConf, LogshedReducer.class);
 		
 		Job job = new Job(jobConf, "muxdemux_job");
 		FileInputFormat.setInputPaths(job, new Path(args[0]));
 		Path outPath = new Path(args[1]);
 		FileOutputFormat.setOutputPath(job, outPath);
 		job.setJarByClass(MuxDemuxJob.class);
-	
+		
+		AvroJob.setInputSchema(jobConf, IN_SCHEMA);
+		AvroJob.setOutputSchema(jobConf, OUT_SCHEMA);
+
+		AvroJob.setMapperClass(jobConf, LogshedMapper.class);
+		AvroJob.setReducerClass(jobConf, LogshedReducer.class);
 
 		return job.waitForCompletion(true) ? 0 : 1;
 
